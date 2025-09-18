@@ -1,39 +1,49 @@
+// Import dependencies and components
 import { useState } from "react";
 import TabButton from "./TabButton.jsx";
 import { EXAMPLES } from "../data.js";
 import Section from "./Section.jsx";
 
-export default function Exampels (){ 
-    const [selectedTopik ,setSelectedTopik] = useState(0)
-        let Tabtext = "Pelese choose a button"
-        function  handleClick(selectedButton) {
-            console.log(Tabtext);
-            setSelectedTopik(selectedButton)
-    
-        Tabtext = selectedButton;
-    }
-    Tabtext = "Pelese choose a button"
-    
-    if(selectedTopik){
-        Tabtext = <div id="tab-content">
-    
-            <h3>{EXAMPLES[selectedTopik].title}</h3>
-            <p>{EXAMPLES[selectedTopik].description}</p>
-            <pre>
-                        <code>{EXAMPLES[selectedTopik].code}</code>
-                    </pre>
-        </div>
-    }
-    return (
-    <Section id="examples" title = "Examples">
-            <menu>
-                <TabButton isselected={selectedTopik === "components"} onClick={() => {handleClick("components")}}>Components</TabButton>
-                <TabButton isselected={selectedTopik === "jsx"} onClick={() => {handleClick("jsx")}}>JSX</TabButton>
-                <TabButton isselected={selectedTopik === "props"} onClick={() => {handleClick("props")}}>Props</TabButton>
-                <TabButton isselected={selectedTopik === "state"} onClick={() => {handleClick("state")}}>State</TabButton>
-            </menu>
-            {Tabtext}
+export default function Examples() {
+  const [selectedTopic, setSelectedTopic] = useState(null);
 
-        </Section>
-        )
-    }
+  // Handle tab button click
+  function handleClick(topic) {
+    setSelectedTopic(topic);
+  }
+
+  // Render selected example content
+  let tabContent = <p>Please choose a topic</p>;
+  if (selectedTopic) {
+    const { title, description, code } = EXAMPLES[selectedTopic];
+    tabContent = (
+      <div id="tab-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <pre>
+          <code>{code}</code>
+        </pre>
+      </div>
+    );
+  }
+
+  return (
+    <Section id="examples" title="Examples">
+      <menu>
+        <TabButton isselected={selectedTopic === "components"} onClick={() => handleClick("components")}>
+          Components
+        </TabButton>
+        <TabButton isselected={selectedTopic === "jsx"} onClick={() => handleClick("jsx")}>
+          JSX
+        </TabButton>
+        <TabButton isselected={selectedTopic === "props"} onClick={() => handleClick("props")}>
+          Props
+        </TabButton>
+        <TabButton isselected={selectedTopic === "state"} onClick={() => handleClick("state")}>
+          State
+        </TabButton>
+      </menu>
+      {tabContent}
+    </Section>
+  );
+}
