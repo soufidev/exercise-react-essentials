@@ -6,13 +6,19 @@ It introduces core concepts like components, JSX, props, and state — all wrapp
 > ⚠️ This project was created for educational purposes during a React course.  
 > 💡 All code was written from scratch by me — no templates, no copy-paste.
 
+---
+
 ## 👤 Author
 
 Created by [Mohamed Soufi](https://www.linkedin.com/in/mohamed-soufi-039510385/)
 
+---
+
 ## 🔗 GitHub Repository
 
 [View on GitHub](https://github.com/your-username/react-essentials)
+
+---
 
 ## Features
 
@@ -21,6 +27,8 @@ Created by [Mohamed Soufi](https://www.linkedin.com/in/mohamed-soufi-039510385/)
 - 🔹 Clean layout with responsive design  
 - 🔹 Minimal styling using plain CSS
 
+---
+
 ## Tech Stack
 
 - React  
@@ -28,10 +36,12 @@ Created by [Mohamed Soufi](https://www.linkedin.com/in/mohamed-soufi-039510385/)
 - JavaScript (ES6+)  
 - CSS
 
+---
+
 ## Installation
 
 ```bash
-# Clone the repo
+# Clone the repository
 git clone https://github.com/your-username/react-essentials.git
 
 # Navigate to the project folder
@@ -43,7 +53,8 @@ npm install
 # Start the development server
 npm run dev
 
-#Folder Structure
+Folder Structure
+
 src/
 ├── assets/           # Images used in UI
 ├── components/       # Reusable React components
